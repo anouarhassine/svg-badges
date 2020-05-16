@@ -1,0 +1,31 @@
+{
+  "name": "svg-badges",
+  "version": "0.1.0",
+  "description": "SVG Badges generator",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js 2",
+    "test": "jasmine"
+  },
+  "keywords": [
+    "SVG",
+    "badge",
+    "Nuget",
+    "npm"
+  ],
+  "author": "anouar.hassine",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "jasmine": "^2.5.3",
+    "jasmine-spec-reporter": "^3.2.0",
+    "nock": "^9.0.11"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "pdfkit": "^0.8.0",
+    "request": "^2.81.0",
+    "strong-cluster-control": "^2.2.3",
+    "swig-templates": "^2.0.2",
+    "xml2js": "^0.4.17"
+  }
+}
