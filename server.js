@@ -2,7 +2,7 @@ var cluster = require('cluster');
 var control = require('strong-cluster-control');
 const args = process.argv;
 var instances = process.env.INSTANCES || 1;
-var port = process.env.PORT || 8888;
+var port = process.env.PORT || 9000;
 
 cluster.SCHED_RR;
 
