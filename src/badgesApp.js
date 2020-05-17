@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-//var path = require("path");
 var badgesHandler = require("./Handlers/badgesHandler");
 
 app.get('/nuget/version/:packageId', function (req, res, next) {

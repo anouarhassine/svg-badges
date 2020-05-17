@@ -15,7 +15,7 @@ function getNugetPackageLatestVersion(packageId)
                 function (content) {
                     if (helper.isJson(content)) {
                         var versionsInfo = JSON.parse(content);
-                        var versions = versionsInfo['versions'];
+                        var versions = versionsInfo.versions;
                         var latestVersion = versions[versions.length - 1];
                         resolve(latestVersion);
                     }
@@ -49,7 +49,7 @@ function getNugetPackageDownloadsCount(packageId, version) {
                                 explicitArray : false
                             },
                             function (err, result) {
-                                resolve(result['entry']['properties']['DownloadCount']['_']);
+                                resolve(result.entry.properties.DownloadCount._);
                         },
                         function (error) {
                         reject(error);

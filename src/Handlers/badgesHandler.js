@@ -5,7 +5,7 @@ var npmDataManager = require('./npmDataManager');
 var helper = require('./requestHelper');
 
 function displayNugetVersionBadge(response, params, next){
-    nugetDataManager.getNugetPackageLatestVersion(params['packageId']).then(latestVersion => {
+    nugetDataManager.getNugetPackageLatestVersion(params.packageId).then(latestVersion => {
 		badgeGenerator.generateBadge('nuget', latestVersion, color.Blue).then(svgContent => {
 		response.writeHead(200, {"Content-Type": "image/svg+xml"})
 		response.write(svgContent);
@@ -18,8 +18,8 @@ function displayNugetVersionBadge(response, params, next){
 }
 
 function displayNugetDownloadsCountBadge(response, params, next){
-	nugetDataManager.getNugetPackageLatestVersion(params['packageId']).then(latestVersion => {
-		nugetDataManager.getNugetPackageDownloadsCount(params['packageId'], latestVersion).then(downloadsCount => {
+	nugetDataManager.getNugetPackageLatestVersion(params.packageId).then(latestVersion => {
+		nugetDataManager.getNugetPackageDownloadsCount(params.packageId, latestVersion).then(downloadsCount => {
 		badgeGenerator.generateBadge('downloads', downloadsCount, color.BrightGreen).then(svgContent => {
 			response.writeHead(200, {"Content-Type": "image/svg+xml"})
 			response.write(svgContent);
@@ -33,7 +33,7 @@ function displayNugetDownloadsCountBadge(response, params, next){
 }
 
 function displayNpmVersionBadge(response, params, next){
-	npmDataManager.getNpmPackageLatestVersion(params['packageId']).then(latestVersion => {
+	npmDataManager.getNpmPackageLatestVersion(params.packageId).then(latestVersion => {
 		badgeGenerator.generateBadge('npm', latestVersion, color.Blue).then(svgContent => {
 		response.writeHead(200, {"Content-Type": "image/svg+xml"})
 		response.write(svgContent);
@@ -49,12 +49,12 @@ function displayNpmDownloadsCountBadge(response, params, next){
 	var startDate = '2009-05-27';
 	var endDate = helper.getTodaysDate();
 
-	if (typeof params['startDate'] !== 'undefined' && typeof params['endDate'] !== 'undefined'){
-		startDate = params['startDate'];
-		endDate = params['endDate'];
+	if (typeof params.startDate !== 'undefined' && typeof params.endDate !== 'undefined'){
+		startDate = params.startDate;
+		endDate = params.endDate;
 	}
 	
-	npmDataManager.getNpmPackageDownloadsCount(params['packageId'], startDate, endDate).then(downloadsCount => {
+	npmDataManager.getNpmPackageDownloadsCount(params.packageId, startDate, endDate).then(downloadsCount => {
 			badgeGenerator.generateBadge('downloads', downloadsCount.toString(), color.BrightGreen).then(svgContent => {
 			response.writeHead(200, {"Content-Type": "image/svg+xml"})
 			response.write(svgContent);
@@ -70,11 +70,11 @@ function displayNpmDownloadsCountBadge(response, params, next){
 
 function displayStaticBadge(response, params, next){
     var badgeColor = color.LightGrey;
-    if (color[params['color']]){
-        badgeColor = color[params['color']];
+    if (color[params.color]){
+        badgeColor = color[params.color];
     }
 
-    badgeGenerator.generateBadge(params['leftLabel'], params['rightLabel'], badgeColor).then(svgContent => {
+    badgeGenerator.generateBadge(params.leftLabel, params.rightLabel, badgeColor).then(svgContent => {
 		response.writeHead(200, {"Content-Type": "image/svg+xml"})
 		response.write(svgContent);
 		response.end();

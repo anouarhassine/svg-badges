@@ -14,7 +14,7 @@ function getNpmPackageLatestVersion(packageId)
                         if (helper.isJson(content)) {
                             var packageInfo = JSON.parse(content);
                             if (!packageInfo.hasOwnProperty('error')) {
-                                var latestVersion = packageInfo['version'];
+                                var latestVersion = packageInfo.version;
                                 resolve(latestVersion);
                             }
                             else {
@@ -50,7 +50,7 @@ function getNpmPackageDownloadsCount(packageId, startDate, endDate) {
                             var downloadsInfo = JSON.parse(result);
                             if (!downloadsInfo.hasOwnProperty('error'))
                             {
-                                var downloadsCount = parseInt(downloadsInfo['downloads']);
+                                var downloadsCount = parseInt(downloadsInfo.downloads);
                                 resolve(downloadsCount);
                             }
                             else {
