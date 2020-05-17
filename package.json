@@ -16,16 +16,16 @@
   "author": "anouar.hassine",
   "license": "Apache-2.0",
   "devDependencies": {
-    "jasmine": "^2.5.3",
-    "jasmine-spec-reporter": "^3.2.0",
-    "nock": "^9.0.11"
+    "jasmine": "^3.5.0",
+    "jasmine-spec-reporter": "^5.0.2",
+    "nock": "^12.0.3"
   },
   "dependencies": {
-    "express": "^4.15.2",
-    "pdfkit": "^0.8.0",
-    "request": "^2.81.0",
-    "strong-cluster-control": "^2.2.3",
-    "swig-templates": "^2.0.2",
-    "xml2js": "^0.4.17"
+    "express": "^4.17.1",
+    "pdfkit": "^0.11.0",
+    "request": "^2.88.2",
+    "strong-cluster-control": "^2.2.4",
+    "swig-templates": "^2.0.3",
+    "xml2js": "^0.4.23"
   }
 }
