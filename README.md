@@ -2,7 +2,7 @@
 
 # SVG Badges generator
 
-An SVG badge generator developed as part of a self-training about Node.js and testing/mocking with Jasmine. It returns info badges about about Npm and Nuget packages.
+An SVG badge generator developed as part of a self-training about Node.js and testing/mocking with Jasmine. It returns info badges about Npm and Nuget packages.
 
 ## Available API
 
